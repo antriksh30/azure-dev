@@ -810,7 +810,7 @@ func Test_GitHubCiProvider_credentialOptions(t *testing.T) {
 	// Helper to create a provider with mocked OIDC API returning default
 	newProvider := func(t *testing.T) *GitHubCiProvider {
 		t.Helper()
-		mockContext := mocks.NewMockContext(context.Background())
+		mockContext := mocks.NewMockContext(t.Context())
 		mockContext.Console.SetNoPromptMode(true)
 
 		// Mock OIDC API to return default config for any repo
